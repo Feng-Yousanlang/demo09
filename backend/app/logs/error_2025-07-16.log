@@ -1,0 +1,168 @@
+2025-07-16 11:29:06 - app.services.video_cleanup - ERROR - 按时间清理视频失败: Task <Task pending name='Task-6' coro=<VideoCleanupService._perform_cleanup() running at C:\Users\86195\Desktop\homevideo\backend\app\services\video_cleanup.py:88> cb=[_run_until_complete_cb() at D:\python10\lib\asyncio\base_events.py:184]> got Future <Future pending> attached to a different loop
+2025-07-16 11:29:49 - sqlalchemy.pool.impl.AsyncAdaptedQueuePool - ERROR - Exception terminating connection <AdaptedConnection <aiomysql.connection.Connection object at 0x000002B312C49270>>
+Traceback (most recent call last):
+  File "C:\Users\86195\Desktop\homevideo\backend\.venv\lib\site-packages\sqlalchemy\pool\base.py", line 1306, in _checkout
+    result = pool._dialect._do_ping_w_event(
+  File "C:\Users\86195\Desktop\homevideo\backend\.venv\lib\site-packages\sqlalchemy\engine\default.py", line 709, in _do_ping_w_event
+    return self.do_ping(dbapi_connection)
+  File "C:\Users\86195\Desktop\homevideo\backend\.venv\lib\site-packages\sqlalchemy\dialects\mysql\pymysql.py", line 105, in do_ping
+    dbapi_connection.ping(False)
+  File "C:\Users\86195\Desktop\homevideo\backend\.venv\lib\site-packages\sqlalchemy\dialects\mysql\aiomysql.py", line 185, in ping
+    return self.await_(self._connection.ping(reconnect))
+  File "C:\Users\86195\Desktop\homevideo\backend\.venv\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 125, in await_only
+    return current.driver.switch(awaitable)  # type: ignore[no-any-return]
+  File "C:\Users\86195\Desktop\homevideo\backend\.venv\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 185, in greenlet_spawn
+    value = await result
+  File "C:\Users\86195\Desktop\homevideo\backend\.venv\lib\site-packages\aiomysql\connection.py", line 494, in ping
+    await self._read_ok_packet()
+  File "C:\Users\86195\Desktop\homevideo\backend\.venv\lib\site-packages\aiomysql\connection.py", line 372, in _read_ok_packet
+    pkt = await self._read_packet()
+  File "C:\Users\86195\Desktop\homevideo\backend\.venv\lib\site-packages\aiomysql\connection.py", line 609, in _read_packet
+    packet_header = await self._read_bytes(4)
+  File "C:\Users\86195\Desktop\homevideo\backend\.venv\lib\site-packages\aiomysql\connection.py", line 657, in _read_bytes
+    data = await self._reader.readexactly(num_bytes)
+  File "D:\python10\lib\asyncio\streams.py", line 708, in readexactly
+    await self._wait_for_data('readexactly')
+  File "D:\python10\lib\asyncio\streams.py", line 502, in _wait_for_data
+    await self._waiter
+RuntimeError: Task <Task pending name='Task-59' coro=<RequestResponseCycle.run_asgi() running at C:\Users\86195\Desktop\homevideo\backend\.venv\lib\site-packages\uvicorn\protocols\http\httptools_impl.py:426> cb=[set.discard()]> got Future <Future pending> attached to a different loop
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\86195\Desktop\homevideo\backend\.venv\lib\site-packages\sqlalchemy\pool\base.py", line 377, in _close_connection
+    self._dialect.do_terminate(connection)
+  File "C:\Users\86195\Desktop\homevideo\backend\.venv\lib\site-packages\sqlalchemy\engine\default.py", line 698, in do_terminate
+    self.do_close(dbapi_connection)
+  File "C:\Users\86195\Desktop\homevideo\backend\.venv\lib\site-packages\sqlalchemy\engine\default.py", line 701, in do_close
+    dbapi_connection.close()
+  File "C:\Users\86195\Desktop\homevideo\backend\.venv\lib\site-packages\sqlalchemy\dialects\mysql\aiomysql.py", line 207, in close
+    self._connection.close()
+  File "C:\Users\86195\Desktop\homevideo\backend\.venv\lib\site-packages\aiomysql\connection.py", line 339, in close
+    self._writer.transport.close()
+  File "D:\python10\lib\asyncio\selector_events.py", line 700, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+  File "D:\python10\lib\asyncio\base_events.py", line 745, in call_soon
+    self._check_closed()
+  File "D:\python10\lib\asyncio\base_events.py", line 510, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+2025-07-16 11:29:49 - app.api.system - ERROR - 数据库连接检查失败: Task <Task pending name='Task-59' coro=<RequestResponseCycle.run_asgi() running at C:\Users\86195\Desktop\homevideo\backend\.venv\lib\site-packages\uvicorn\protocols\http\httptools_impl.py:426> cb=[set.discard()]> got Future <Future pending> attached to a different loop
+2025-07-16 11:30:07 - app.services.video_stream - ERROR - 处理事件 753 录制失败: no running event loop
+2025-07-16 11:30:07 - app.services.video_stream - ERROR - 处理事件 754 录制失败: no running event loop
+2025-07-16 11:30:12 - app.services.video_stream - ERROR - 处理事件 755 录制失败: no running event loop
+2025-07-16 11:30:12 - app.services.video_stream - ERROR - 处理事件 756 录制失败: no running event loop
+2025-07-16 11:33:18 - app.services.video_cleanup - ERROR - 按时间清理视频失败: Task <Task pending name='Task-6' coro=<VideoCleanupService._perform_cleanup() running at C:\Users\86195\Desktop\homevideo\backend\app\services\video_cleanup.py:88> cb=[_run_until_complete_cb() at D:\python10\lib\asyncio\base_events.py:184]> got Future <Future pending> attached to a different loop
+2025-07-16 11:33:30 - sqlalchemy.pool.impl.AsyncAdaptedQueuePool - ERROR - Exception terminating connection <AdaptedConnection <aiomysql.connection.Connection object at 0x000002CE07DAECE0>>
+Traceback (most recent call last):
+  File "C:\Users\86195\Desktop\homevideo\backend\.venv\lib\site-packages\sqlalchemy\pool\base.py", line 1306, in _checkout
+    result = pool._dialect._do_ping_w_event(
+  File "C:\Users\86195\Desktop\homevideo\backend\.venv\lib\site-packages\sqlalchemy\engine\default.py", line 709, in _do_ping_w_event
+    return self.do_ping(dbapi_connection)
+  File "C:\Users\86195\Desktop\homevideo\backend\.venv\lib\site-packages\sqlalchemy\dialects\mysql\pymysql.py", line 105, in do_ping
+    dbapi_connection.ping(False)
+  File "C:\Users\86195\Desktop\homevideo\backend\.venv\lib\site-packages\sqlalchemy\dialects\mysql\aiomysql.py", line 185, in ping
+    return self.await_(self._connection.ping(reconnect))
+  File "C:\Users\86195\Desktop\homevideo\backend\.venv\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 125, in await_only
+    return current.driver.switch(awaitable)  # type: ignore[no-any-return]
+  File "C:\Users\86195\Desktop\homevideo\backend\.venv\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 185, in greenlet_spawn
+    value = await result
+  File "C:\Users\86195\Desktop\homevideo\backend\.venv\lib\site-packages\aiomysql\connection.py", line 494, in ping
+    await self._read_ok_packet()
+  File "C:\Users\86195\Desktop\homevideo\backend\.venv\lib\site-packages\aiomysql\connection.py", line 372, in _read_ok_packet
+    pkt = await self._read_packet()
+  File "C:\Users\86195\Desktop\homevideo\backend\.venv\lib\site-packages\aiomysql\connection.py", line 609, in _read_packet
+    packet_header = await self._read_bytes(4)
+  File "C:\Users\86195\Desktop\homevideo\backend\.venv\lib\site-packages\aiomysql\connection.py", line 657, in _read_bytes
+    data = await self._reader.readexactly(num_bytes)
+  File "D:\python10\lib\asyncio\streams.py", line 708, in readexactly
+    await self._wait_for_data('readexactly')
+  File "D:\python10\lib\asyncio\streams.py", line 502, in _wait_for_data
+    await self._waiter
+RuntimeError: Task <Task pending name='Task-36' coro=<RequestResponseCycle.run_asgi() running at C:\Users\86195\Desktop\homevideo\backend\.venv\lib\site-packages\uvicorn\protocols\http\httptools_impl.py:426> cb=[set.discard()]> got Future <Future pending> attached to a different loop
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\86195\Desktop\homevideo\backend\.venv\lib\site-packages\sqlalchemy\pool\base.py", line 377, in _close_connection
+    self._dialect.do_terminate(connection)
+  File "C:\Users\86195\Desktop\homevideo\backend\.venv\lib\site-packages\sqlalchemy\engine\default.py", line 698, in do_terminate
+    self.do_close(dbapi_connection)
+  File "C:\Users\86195\Desktop\homevideo\backend\.venv\lib\site-packages\sqlalchemy\engine\default.py", line 701, in do_close
+    dbapi_connection.close()
+  File "C:\Users\86195\Desktop\homevideo\backend\.venv\lib\site-packages\sqlalchemy\dialects\mysql\aiomysql.py", line 207, in close
+    self._connection.close()
+  File "C:\Users\86195\Desktop\homevideo\backend\.venv\lib\site-packages\aiomysql\connection.py", line 339, in close
+    self._writer.transport.close()
+  File "D:\python10\lib\asyncio\selector_events.py", line 700, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+  File "D:\python10\lib\asyncio\base_events.py", line 745, in call_soon
+    self._check_closed()
+  File "D:\python10\lib\asyncio\base_events.py", line 510, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+2025-07-16 11:33:30 - app.api.face - ERROR - 获取统计信息失败: Task <Task pending name='Task-36' coro=<RequestResponseCycle.run_asgi() running at C:\Users\86195\Desktop\homevideo\backend\.venv\lib\site-packages\uvicorn\protocols\http\httptools_impl.py:426> cb=[set.discard()]> got Future <Future pending> attached to a different loop
+2025-07-16 11:33:46 - app.services.video_stream - ERROR - 处理事件 757 录制失败: no running event loop
+2025-07-16 11:33:46 - app.services.video_stream - ERROR - 处理事件 758 录制失败: no running event loop
+2025-07-16 11:33:52 - app.services.video_stream - ERROR - 处理事件 759 录制失败: no running event loop
+2025-07-16 11:33:52 - app.services.video_stream - ERROR - 处理事件 760 录制失败: no running event loop
+2025-07-16 11:33:57 - app.services.video_stream - ERROR - 处理事件 761 录制失败: no running event loop
+2025-07-16 11:33:57 - app.services.video_stream - ERROR - 处理事件 762 录制失败: no running event loop
+2025-07-16 11:34:06 - app.services.video_stream - ERROR - 处理事件 763 录制失败: no running event loop
+2025-07-16 11:34:06 - app.services.video_stream - ERROR - 处理事件 764 录制失败: no running event loop
+2025-07-16 11:39:08 - app.services.ai_analysis - ERROR - 网络连接错误 (尝试 1/3): [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2025-07-16 11:52:48 - app.services.ai_analysis - ERROR - 网络连接错误 (尝试 1/3): Cannot connect to host dashscope.aliyuncs.com:443 ssl:default [getaddrinfo failed]
+2025-07-16 11:53:00 - app.services.ai_analysis - ERROR - 网络连接错误 (尝试 2/3): Cannot connect to host dashscope.aliyuncs.com:443 ssl:default [getaddrinfo failed]
+2025-07-16 22:16:21 - app.services.video_stream - ERROR - 无法打开RTMP流: rtmp://121.41.28.35:9090/live/obs_stream
+2025-07-16 22:16:51 - app.services.video_stream - ERROR - 无法打开RTMP流: rtmp://121.41.28.35:9090/live/obs_stream
+2025-07-16 22:17:21 - app.services.ai_analysis - ERROR - API调用超时 (尝试 1/3)
+2025-07-16 22:17:21 - app.services.video_stream - ERROR - 无法打开RTMP流: rtmp://121.41.28.35:9090/live/obs_stream
+2025-07-16 22:18:41 - app.services.ai_analysis - ERROR - AI分析执行错误: 
+2025-07-16 22:21:23 - app.services.video_stream - ERROR - 无法打开RTMP流: rtmp://121.41.28.35:9090/live/obs_stream
+2025-07-16 22:40:02 - app.services.video_stream - ERROR - 无法打开RTMP流: rtmp://121.41.28.35:9090/live/obs_stream
+2025-07-16 22:40:32 - app.services.video_stream - ERROR - 无法打开RTMP流: rtmp://121.41.28.35:9090/live/obs_stream
+2025-07-16 22:42:57 - app.services.video_stream - ERROR - 无法打开RTMP流: rtmp://121.41.28.35:9090/live/obs_stream
+2025-07-16 22:44:20 - app.services.video_stream - ERROR - 无法打开RTMP流: rtmp://121.41.28.35:9090/live/obs_stream
+2025-07-16 22:44:45 - app.services.video_stream - ERROR - 无法打开RTMP流: rtmp://121.41.28.35:9090/live/obs_stream
+2025-07-16 22:51:12 - app.services.face_recognition - ERROR - 注册人脸失败 for test000: Face could not be detected. Please confirm that the picture is a face photo or consider to set enforce_detection param to False.
+2025-07-16 22:51:29 - app.services.face_recognition - ERROR - 注册人脸失败 for test000: Face could not be detected. Please confirm that the picture is a face photo or consider to set enforce_detection param to False.
+2025-07-16 22:53:12 - app.services.ai_analysis - ERROR - API请求失败 - 状态码: 400, 响应: {"error":{"code":"data_inspection_failed","param":null,"message":"Input data may contain inappropriate content.","type":"data_inspection_failed"},"id":"chatcmpl-26be87fc-c864-935d-9e16-dac2b5b508fa","request_id":"26be87fc-c864-935d-9e16-dac2b5b508fa"}
+2025-07-16 22:53:14 - app.services.ai_analysis - ERROR - API请求失败 - 状态码: 400, 响应: {"error":{"code":"data_inspection_failed","param":null,"message":"Input data may contain inappropriate content.","type":"data_inspection_failed"},"id":"chatcmpl-dbec970d-e204-9bf9-8b99-60663cf9c4f1","request_id":"dbec970d-e204-9bf9-8b99-60663cf9c4f1"}
+2025-07-16 22:53:18 - app.services.ai_analysis - ERROR - API请求失败 - 状态码: 400, 响应: {"error":{"code":"data_inspection_failed","param":null,"message":"Input data may contain inappropriate content.","type":"data_inspection_failed"},"id":"chatcmpl-2aa35e2a-b179-9049-bad1-0a88b24d2a2a","request_id":"2aa35e2a-b179-9049-bad1-0a88b24d2a2a"}
+2025-07-16 22:53:22 - app.services.ai_analysis - ERROR - API请求失败 - 状态码: 400, 响应: {"error":{"code":"data_inspection_failed","param":null,"message":"Input data may contain inappropriate content.","type":"data_inspection_failed"},"id":"chatcmpl-afe86012-ca0e-9333-bb9c-6ad201d36709","request_id":"afe86012-ca0e-9333-bb9c-6ad201d36709"}
+2025-07-16 22:53:25 - app.services.ai_analysis - ERROR - API请求失败 - 状态码: 400, 响应: {"error":{"code":"data_inspection_failed","param":null,"message":"Input data may contain inappropriate content.","type":"data_inspection_failed"},"id":"chatcmpl-dc312cfe-133d-9dcb-8d6c-2d1880029726","request_id":"dc312cfe-133d-9dcb-8d6c-2d1880029726"}
+2025-07-16 22:53:29 - app.services.ai_analysis - ERROR - API请求失败 - 状态码: 400, 响应: {"error":{"code":"data_inspection_failed","param":null,"message":"Input data may contain inappropriate content.","type":"data_inspection_failed"},"id":"chatcmpl-50cbe1cd-d409-912e-901c-3c9140b8ca74","request_id":"50cbe1cd-d409-912e-901c-3c9140b8ca74"}
+2025-07-16 22:56:54 - app.services.ai_analysis - ERROR - API请求失败 - 状态码: 400, 响应: {"error":{"code":"data_inspection_failed","param":null,"message":"Input data may contain inappropriate content.","type":"data_inspection_failed"},"id":"chatcmpl-31abf18d-0f27-94d9-8397-c746ddcb3474","request_id":"31abf18d-0f27-94d9-8397-c746ddcb3474"}
+2025-07-16 22:56:58 - app.services.ai_analysis - ERROR - API请求失败 - 状态码: 400, 响应: {"error":{"code":"data_inspection_failed","param":null,"message":"Input data may contain inappropriate content.","type":"data_inspection_failed"},"id":"chatcmpl-b26f922b-e71d-9f4a-a3f6-6d88fc4f12d9","request_id":"b26f922b-e71d-9f4a-a3f6-6d88fc4f12d9"}
+2025-07-16 22:56:59 - app.services.video_stream - ERROR - 无法打开RTMP流: rtmp://121.41.28.35:9090/live/obs_stream
+2025-07-16 22:57:01 - app.services.ai_analysis - ERROR - API请求失败 - 状态码: 400, 响应: {"error":{"code":"data_inspection_failed","param":null,"message":"Input data may contain inappropriate content.","type":"data_inspection_failed"},"id":"chatcmpl-f11a8cc9-36c7-9bff-b420-0cf6b732327b","request_id":"f11a8cc9-36c7-9bff-b420-0cf6b732327b"}
+2025-07-16 22:57:03 - app.services.ai_analysis - ERROR - API请求失败 - 状态码: 400, 响应: {"error":{"code":"data_inspection_failed","param":null,"message":"Input data may contain inappropriate content.","type":"data_inspection_failed"},"id":"chatcmpl-ca5ab315-7d59-9ab3-a54e-d2d6819d3141","request_id":"ca5ab315-7d59-9ab3-a54e-d2d6819d3141"}
+2025-07-16 22:57:05 - app.services.ai_analysis - ERROR - API请求失败 - 状态码: 400, 响应: {"error":{"code":"data_inspection_failed","param":null,"message":"Input data may contain inappropriate content.","type":"data_inspection_failed"},"id":"chatcmpl-98aa68e5-988f-9f52-9288-57e32e3de67b","request_id":"98aa68e5-988f-9f52-9288-57e32e3de67b"}
+2025-07-16 22:57:08 - app.services.ai_analysis - ERROR - API请求失败 - 状态码: 400, 响应: {"error":{"code":"data_inspection_failed","param":null,"message":"Input data may contain inappropriate content.","type":"data_inspection_failed"},"id":"chatcmpl-9cba5c91-8649-9f65-9a20-d207c4aa6d4d","request_id":"9cba5c91-8649-9f65-9a20-d207c4aa6d4d"}
+2025-07-16 22:57:10 - app.services.ai_analysis - ERROR - API请求失败 - 状态码: 400, 响应: {"error":{"code":"data_inspection_failed","param":null,"message":"Input data may contain inappropriate content.","type":"data_inspection_failed"},"id":"chatcmpl-8941c04c-dc1b-90e4-b363-5d3df03bfc7c","request_id":"8941c04c-dc1b-90e4-b363-5d3df03bfc7c"}
+2025-07-16 22:57:13 - app.services.ai_analysis - ERROR - API请求失败 - 状态码: 400, 响应: {"error":{"code":"data_inspection_failed","param":null,"message":"Input data may contain inappropriate content.","type":"data_inspection_failed"},"id":"chatcmpl-5302de91-dbae-9cd4-8369-27706bf52c7e","request_id":"5302de91-dbae-9cd4-8369-27706bf52c7e"}
+2025-07-16 22:57:16 - app.services.ai_analysis - ERROR - API请求失败 - 状态码: 400, 响应: {"error":{"code":"data_inspection_failed","param":null,"message":"Input data may contain inappropriate content.","type":"data_inspection_failed"},"id":"chatcmpl-42c7ea9a-2da6-9830-8f49-6ab795dbbe29","request_id":"42c7ea9a-2da6-9830-8f49-6ab795dbbe29"}
+2025-07-16 22:57:29 - app.services.ai_analysis - ERROR - API请求失败 - 状态码: 400, 响应: {"error":{"code":"data_inspection_failed","param":null,"message":"Input data may contain inappropriate content.","type":"data_inspection_failed"},"id":"chatcmpl-319ab8d0-fd7d-964e-a00d-28e459cc038a","request_id":"319ab8d0-fd7d-964e-a00d-28e459cc038a"}
+2025-07-16 22:57:32 - app.services.ai_analysis - ERROR - API请求失败 - 状态码: 400, 响应: {"error":{"code":"data_inspection_failed","param":null,"message":"Input data may contain inappropriate content.","type":"data_inspection_failed"},"id":"chatcmpl-fead6ee7-d1b0-9244-ac5b-86276da2bfcf","request_id":"fead6ee7-d1b0-9244-ac5b-86276da2bfcf"}
+2025-07-16 22:57:36 - app.services.ai_analysis - ERROR - API请求失败 - 状态码: 400, 响应: {"error":{"code":"data_inspection_failed","param":null,"message":"Input data may contain inappropriate content.","type":"data_inspection_failed"},"id":"chatcmpl-82c8f46f-29c4-97f9-bfa1-a8d017be9e54","request_id":"82c8f46f-29c4-97f9-bfa1-a8d017be9e54"}
+2025-07-16 23:03:44 - app.services.ai_analysis - ERROR - API请求失败 - 状态码: 400, 响应: {"error":{"code":"data_inspection_failed","param":null,"message":"Input data may contain inappropriate content.","type":"data_inspection_failed"},"id":"chatcmpl-8ecf40c7-4212-9e5d-8850-4210e25ffbe5","request_id":"8ecf40c7-4212-9e5d-8850-4210e25ffbe5"}
+2025-07-16 23:03:46 - app.services.ai_analysis - ERROR - API请求失败 - 状态码: 400, 响应: {"error":{"code":"data_inspection_failed","param":null,"message":"Input data may contain inappropriate content.","type":"data_inspection_failed"},"id":"chatcmpl-e2377db0-e1fc-94fe-a066-6ef13ec30f0f","request_id":"e2377db0-e1fc-94fe-a066-6ef13ec30f0f"}
+2025-07-16 23:03:50 - app.services.ai_analysis - ERROR - API请求失败 - 状态码: 400, 响应: {"error":{"code":"data_inspection_failed","param":null,"message":"Input data may contain inappropriate content.","type":"data_inspection_failed"},"id":"chatcmpl-360aaba9-def5-91a6-b588-2fea7e8b1954","request_id":"360aaba9-def5-91a6-b588-2fea7e8b1954"}
+2025-07-16 23:06:51 - app.services.ai_analysis - ERROR - API请求失败 - 状态码: 400, 响应: {"error":{"code":"data_inspection_failed","param":null,"message":"Input data may contain inappropriate content.","type":"data_inspection_failed"},"id":"chatcmpl-dbeeed20-61c8-939a-b765-10e0ec1b6b74","request_id":"dbeeed20-61c8-939a-b765-10e0ec1b6b74"}
+2025-07-16 23:06:53 - app.services.ai_analysis - ERROR - API请求失败 - 状态码: 400, 响应: {"error":{"code":"data_inspection_failed","param":null,"message":"Input data may contain inappropriate content.","type":"data_inspection_failed"},"id":"chatcmpl-06269438-1cd3-9518-8441-34ad3e4f5c57","request_id":"06269438-1cd3-9518-8441-34ad3e4f5c57"}
+2025-07-16 23:06:55 - app.services.ai_analysis - ERROR - API请求失败 - 状态码: 400, 响应: {"error":{"code":"data_inspection_failed","param":null,"message":"Input data may contain inappropriate content.","type":"data_inspection_failed"},"id":"chatcmpl-4c90b03e-a420-9786-a536-91aed1bcbaf2","request_id":"4c90b03e-a420-9786-a536-91aed1bcbaf2"}
+2025-07-16 23:06:55 - app.services.ai_analysis - ERROR - API请求失败 - 状态码: 400, 响应: {"error":{"code":"data_inspection_failed","param":null,"message":"Input data may contain inappropriate content.","type":"data_inspection_failed"},"id":"chatcmpl-e044fedf-a4e1-91b9-ae9d-e76052348ecc","request_id":"e044fedf-a4e1-91b9-ae9d-e76052348ecc"}
+2025-07-16 23:06:57 - app.services.ai_analysis - ERROR - API请求失败 - 状态码: 400, 响应: {"error":{"code":"data_inspection_failed","param":null,"message":"Input data may contain inappropriate content.","type":"data_inspection_failed"},"id":"chatcmpl-d2061b2e-96cb-9a2e-9e37-523b9de57e5f","request_id":"d2061b2e-96cb-9a2e-9e37-523b9de57e5f"}
+2025-07-16 23:07:00 - app.services.ai_analysis - ERROR - API请求失败 - 状态码: 400, 响应: {"error":{"code":"data_inspection_failed","param":null,"message":"Input data may contain inappropriate content.","type":"data_inspection_failed"},"id":"chatcmpl-28ce12d1-dee6-9ada-ba1d-b5e418636092","request_id":"28ce12d1-dee6-9ada-ba1d-b5e418636092"}
+2025-07-16 23:07:01 - app.services.ai_analysis - ERROR - API请求失败 - 状态码: 400, 响应: {"error":{"code":"data_inspection_failed","param":null,"message":"Input data may contain inappropriate content.","type":"data_inspection_failed"},"id":"chatcmpl-b580de33-318c-9eec-9b8a-811efb8ca58a","request_id":"b580de33-318c-9eec-9b8a-811efb8ca58a"}
+2025-07-16 23:07:03 - app.services.ai_analysis - ERROR - API请求失败 - 状态码: 400, 响应: {"error":{"code":"data_inspection_failed","param":null,"message":"Input data may contain inappropriate content.","type":"data_inspection_failed"},"id":"chatcmpl-736d8102-b657-9e22-8311-446d95bc7ef6","request_id":"736d8102-b657-9e22-8311-446d95bc7ef6"}
+2025-07-16 23:07:06 - app.services.ai_analysis - ERROR - API请求失败 - 状态码: 400, 响应: {"error":{"code":"data_inspection_failed","param":null,"message":"Input data may contain inappropriate content.","type":"data_inspection_failed"},"id":"chatcmpl-473e1d98-d29d-96de-99ef-c8729334de2f","request_id":"473e1d98-d29d-96de-99ef-c8729334de2f"}
+2025-07-16 23:07:17 - app.services.ai_analysis - ERROR - API请求失败 - 状态码: 400, 响应: {"error":{"code":"data_inspection_failed","param":null,"message":"Input data may contain inappropriate content.","type":"data_inspection_failed"},"id":"chatcmpl-309824e0-421d-98d4-9dab-1b6d74e0c7f2","request_id":"309824e0-421d-98d4-9dab-1b6d74e0c7f2"}
+2025-07-16 23:07:19 - app.services.ai_analysis - ERROR - API请求失败 - 状态码: 400, 响应: {"error":{"code":"data_inspection_failed","param":null,"message":"Input data may contain inappropriate content.","type":"data_inspection_failed"},"id":"chatcmpl-ad3ced54-8601-9e5d-b395-40df00572596","request_id":"ad3ced54-8601-9e5d-b395-40df00572596"}
+2025-07-16 23:07:22 - app.services.ai_analysis - ERROR - API请求失败 - 状态码: 400, 响应: {"error":{"code":"data_inspection_failed","param":null,"message":"Input data may contain inappropriate content.","type":"data_inspection_failed"},"id":"chatcmpl-10db12be-9971-95ce-b1bc-9c25f16ecee5","request_id":"10db12be-9971-95ce-b1bc-9c25f16ecee5"}
+2025-07-16 23:07:44 - app.services.face_recognition - ERROR - 注册人脸失败 for Tess的: Face could not be detected. Please confirm that the picture is a face photo or consider to set enforce_detection param to False.
+2025-07-16 23:08:06 - app.services.ai_analysis - ERROR - API请求失败 - 状态码: 400, 响应: {"error":{"code":"data_inspection_failed","param":null,"message":"Input data may contain inappropriate content.","type":"data_inspection_failed"},"id":"chatcmpl-595396ab-5343-9268-b409-abff5af5e6a1","request_id":"595396ab-5343-9268-b409-abff5af5e6a1"}
+2025-07-16 23:08:19 - app.services.ai_analysis - ERROR - API请求失败 - 状态码: 400, 响应: {"error":{"code":"data_inspection_failed","param":null,"message":"Input data may contain inappropriate content.","type":"data_inspection_failed"},"id":"chatcmpl-f115b6aa-1c60-91d0-aeac-de2cae2089e1","request_id":"f115b6aa-1c60-91d0-aeac-de2cae2089e1"}
+2025-07-16 23:08:22 - app.services.ai_analysis - ERROR - API请求失败 - 状态码: 400, 响应: {"error":{"code":"data_inspection_failed","param":null,"message":"Input data may contain inappropriate content.","type":"data_inspection_failed"},"id":"chatcmpl-7d8dae8f-1593-9bcb-a68b-a9d7c929bdfd","request_id":"7d8dae8f-1593-9bcb-a68b-a9d7c929bdfd"}
+2025-07-16 23:18:10 - app.services.database - ERROR - 数据库初始化失败: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on 'localhost'")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)

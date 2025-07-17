@@ -1,0 +1,26 @@
+{
+  "name": "homevideo-frontend",
+  "version": "1.0.0",
+  "description": "家庭视频监控系统前端",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.4.27",
+    "vue-router": "^4.3.3",
+    "element-plus": "^2.4.3",
+    "@element-plus/icons-vue": "^2.3.1",
+    "axios": "^1.6.2",
+    "pinia": "^2.1.7"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.5.0",
+    "vite": "^5.2.13",
+    "unplugin-vue-components": "^0.27.0",
+    "unplugin-auto-import": "^0.17.6",
+    "sass": "^1.69.5",
+    "vue-slider-captcha": "^2.0.12"
+  }
+} 
